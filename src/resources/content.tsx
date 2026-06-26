@@ -6,9 +6,9 @@ const person: Person = {
   lastName: "Rost",
   name: `Jesse Rost`,
   role: "Computer Engineer",
-  avatar: "", // Cleared out for now
+  avatar: "", 
   email: "example@gmail.com", 
-  location: "America/Chicago", // Keeping the time-zone compiler happy
+  location: "America/Chicago", 
   languages: ["English"], 
   locale: "en", 
 };
@@ -62,7 +62,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} student and Firmware Engineering Intern 
+      I'm {person.firstName}, a Computer Engineering student at MSOE and Firmware Engineering Intern 
       focused on digital logic design, embedded systems, and computer architecture.
     </>
   ),
@@ -78,7 +78,7 @@ const about: About = {
     subItems: false,
   },
   avatar: {
-    display: false, // Hides the picture section entirely until you want to put one in!
+    display: false, 
   },
   calendar: {
     display: false, 
@@ -89,7 +89,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I am a Computer Engineering student with a passion for designing the hardware and low-level software that power modern computing systems. Currently, I work as a Firmware Engineering Intern at Brady Corporation, where I develop embedded software and gain hands-on experience working close to the hardware.
+        I am a Computer Engineering student at the Milwaukee School of Engineering with a passion for designing the hardware and low-level software that power modern computing systems. Currently, I work as a Firmware Engineering Intern at Brady Corporation, where I develop embedded software and gain hands-on experience working close to the hardware.
         <br /><br />
         Outside of work and coursework, I enjoy building custom PCs, exploring computer architecture, working with FPGAs, and developing embedded systems. I am particularly interested in processor architecture, digital design, CPU/GPU design, and high-performance computing, and I enjoy tackling projects that bridge hardware and software.
         <br /><br />
@@ -107,10 +107,10 @@ const about: About = {
         role: "Firmware Engineering Intern",
         achievements: [
           <>
-            Develop embedded systems software and firmware solutions working directly close to the hardware layer.
+            Develop embedded systems software and firmware solutions, optimizing operations right at the hardware layer.
           </>,
           <>
-            Collaborate with innovative engineering teams to debug and implement microarchitectural controls.
+            Collaborate with cross-functional engineering teams to design, debug, and implement stable microarchitectural controls.
           </>
         ],
         images: [],
@@ -122,11 +122,11 @@ const about: About = {
         achievements: [
           <>
             Designed, simulated, and verified custom processors and digital logic architectures 
-            using design suites like Quartus Prime.
+            using design suites like Intel Quartus.
           </>,
           <>
             Programmed and debugged low-level microprocessor instructions and machine code using 
-            assembly simulators like CPULator.
+            assembly environments.
           </>,
         ],
         images: [],
@@ -138,8 +138,8 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "Your University Name Here",
-        description: <>B.S. in Computer Engineering.</>,
+        name: "Milwaukee School of Engineering (MSOE)",
+        description: <>B.S. in Computer Engineering | Minor in Electrical Engineering</>,
       },
     ],
   },
@@ -148,24 +148,40 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Hardware Design & Simulation",
+        title: "Embedded Systems & Systems Programming",
         description: (
-          <>Experienced in writing HDL (VHDL/Verilog) and compiling designs within Quartus Prime frameworks.</>
+          <>Experienced in low-level programming close to the silicon, utilizing bare-metal code environments, target architectures, and system abstractions.</>
         ),
         tags: [
-          { name: "Quartus", icon: "linkedin" }, 
-          { name: "VHDL/Verilog", icon: "github" }
+          { name: "Embedded C", icon: "github" }, 
+          { name: "Bare-Metal Coding", icon: "terminal" },
+          { name: "ARMv7 Assembly", icon: "terminal" },
+          { name: "C", icon: "github" },
+          { name: "Linux Systems", icon: "terminal" }
         ],
         images: [],
       },
       {
-        title: "Embedded Systems & Low-Level Programming",
+        title: "Digital Design & Hardware Development",
         description: (
-          <>Writing highly optimized systems software using Assembly, C, and machine architecture code natively simulated inside CPULator environments.</>
+          <>Skilled in behavioral modeling, structural logic generation, circuit simulation, and FPGA implementation alongside fundamental electrical engineering concepts.</>
         ),
         tags: [
-          { name: "C / C++", icon: "github" }, 
-          { name: "Assembly", icon: "linkedin" },
+          { name: "VHDL", icon: "github" }, 
+          { name: "Intel Quartus", icon: "linkedin" },
+          { name: "Electrical Engineering", icon: "linkedin" }
+        ],
+        images: [],
+      },
+      {
+        title: "Software Engineering & Automation",
+        description: (
+          <>Proficient in object-oriented programming designs, standalone tool build scripts, and structured environment configurations.</>
+        ),
+        tags: [
+          { name: "Java", icon: "github" }, 
+          { name: "Python", icon: "github" },
+          { name: "YAML Configuration", icon: "terminal" }
         ],
         images: [],
       },
