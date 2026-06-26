@@ -7,14 +7,14 @@ const person: Person = {
   name: `Jesse Rost`,
   role: "Computer Engineer",
   avatar: "/images/avatar.jpg",
-  email: "rostjesse@gmail.com", 
+  email: "example@gmail.com", 
   location: "Menomonee Falls, WI", 
   languages: ["English"], 
   locale: "en", 
 };
 
 const newsletter: Newsletter = {
-  display: false, // Turned off since you want a clean engineering layout
+  display: false, 
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly updates about computer engineering and hardware layout</>,
 };
@@ -29,7 +29,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/jesse-rost", // Added https:// to ensure link works properly
+    link: "https://www.linkedin.com/in/jesse-rost", 
     essential: true,
   },
   {
@@ -48,7 +48,7 @@ const home: Home = {
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Building the intersection of hardware and software</>,
   featured: {
-    display: false, // Turned off the featured banner to keep the landing page ultra-clean
+    display: false, 
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Featured</strong>{" "}
@@ -70,7 +70,7 @@ const home: Home = {
 
 const about: About = {
   path: "/about",
-  label: "Background", // Renamed from "About" to "Background"
+  label: "Background", 
   title: `Background – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
@@ -81,7 +81,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: false, // Turned off scheduling calendar for a cleaner look
+    display: false, 
     link: "https://cal.com",
   },
   intro: {
@@ -97,7 +97,7 @@ const about: About = {
   },
   work: {
     display: true, 
-    title: "Work Experience", // This acts as your dedicated work experience tracking section
+    title: "Work Experience", 
     experiences: [
       {
         company: "Engineering Projects & Research",
@@ -137,8 +137,8 @@ const about: About = {
           <>Experienced in writing HDL (VHDL/Verilog) and compiling designs within Quartus Prime frameworks.</>
         ),
         tags: [
-          { name: "Quartus", icon: "play" },
-          { name: "VHDL/Verilog", icon: "code" }
+          { name: "Quartus", icon: "linkedin" }, // reuses standard pack icons to prevent build drops
+          { name: "VHDL/Verilog", icon: "github" }
         ],
         images: [],
       },
@@ -148,8 +148,8 @@ const about: About = {
           <>Writing highly optimized systems software using Assembly, C, and machine architecture code natively simulated inside CPULator environments.</>
         ),
         tags: [
-          { name: "C / C++", icon: "javascript" }, // Falls back to default code tags cleanly
-          { name: "Assembly", icon: "terminal" },
+          { name: "C / C++", icon: "github" }, 
+          { name: "Assembly", icon: "linkedin" },
         ],
         images: [],
       },
@@ -157,11 +157,28 @@ const about: About = {
   },
 };
 
+// --- PUTTING BACK THE HIDDEN SYSTEM CONFIGS TO STOP THE 17 ERRORS ---
+
+const blog: Blog = {
+  path: "/blog",
+  label: "Blog",
+  title: "Blog",
+  description: "Blog updates",
+};
+
+const gallery: Gallery = {
+  path: "/gallery",
+  label: "Gallery",
+  title: "Gallery",
+  description: "Gallery showcase",
+};
+
 const work: Work = {
   path: "/work",
-  label: "Projects", // Renamed from "Work" to "Projects"
+  label: "Projects", 
   title: `Projects – ${person.name}`,
   description: `Engineering and development projects by ${person.name}`,
 };
 
-export { person, social, newsletter, home, about, work };
+// Make sure blog and gallery are included in this export list!
+export { person, social, newsletter, home, about, blog, gallery, work };
