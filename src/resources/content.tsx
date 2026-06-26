@@ -8,7 +8,7 @@ const person: Person = {
   role: "Computer Engineer",
   avatar: "/images/avatar.jpg",
   email: "example@gmail.com", 
-  location: "Menomonee Falls, WI", 
+  location: "America/Chicago", // Keeps the TypeScript compiler and world clock happy!
   languages: ["English"], 
   locale: "en", 
 };
@@ -72,7 +72,7 @@ const about: About = {
   path: "/about",
   label: "Background", 
   title: `Background – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from Menomonee Falls, WI`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -89,8 +89,8 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Jesse is a Wisconsin-based computer engineer with a passion for solving low-level hardware 
-        and software complexities. From programming embedded systems architectures to modeling 
+        Jesse is a Menomonee Falls, Wisconsin-based computer engineer with a passion for solving low-level 
+        hardware and software complexities. From programming embedded systems architectures to modeling 
         digital circuits, their work bridges structural logic with functional software solutions.
       </>
     ),
@@ -137,7 +137,7 @@ const about: About = {
           <>Experienced in writing HDL (VHDL/Verilog) and compiling designs within Quartus Prime frameworks.</>
         ),
         tags: [
-          { name: "Quartus", icon: "linkedin" }, // reuses standard pack icons to prevent build drops
+          { name: "Quartus", icon: "linkedin" }, 
           { name: "VHDL/Verilog", icon: "github" }
         ],
         images: [],
@@ -156,8 +156,6 @@ const about: About = {
     ],
   },
 };
-
-// --- PUTTING BACK THE HIDDEN SYSTEM CONFIGS TO STOP THE 17 ERRORS ---
 
 const blog: Blog = {
   path: "/blog",
@@ -180,5 +178,4 @@ const work: Work = {
   description: `Engineering and development projects by ${person.name}`,
 };
 
-// Make sure blog and gallery are included in this export list!
 export { person, social, newsletter, home, about, blog, gallery, work };
