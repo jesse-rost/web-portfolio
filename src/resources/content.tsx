@@ -6,9 +6,9 @@ const person: Person = {
   lastName: "Rost",
   name: `Jesse Rost`,
   role: "Computer Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "rostjesse@gmail.com", 
-  location: "America/Chicago", // Keeping the Wisconsin-time zone bouncer happy
+  avatar: "", // Cleared out for now
+  email: "example@gmail.com", 
+  location: "America/Chicago", // Keeping the time-zone compiler happy
   languages: ["English"], 
   locale: "en", 
 };
@@ -62,8 +62,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} focused on digital logic design, 
-      embedded systems, and firmware development. Welcome to my technical portfolio.
+      I'm {person.firstName}, a {person.role.toLowerCase()} student and Firmware Engineering Intern 
+      focused on digital logic design, embedded systems, and computer architecture.
     </>
   ),
 };
@@ -78,7 +78,7 @@ const about: About = {
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false, // Hides the picture section entirely until you want to put one in!
   },
   calendar: {
     display: false, 
@@ -89,9 +89,11 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Jesse is a Menomonee Falls, Wisconsin-based computer engineer with a passion for solving low-level 
-        hardware and software complexities. From programming embedded systems architectures to modeling 
-        digital circuits, their work bridges structural logic with functional software solutions.
+        I am a Computer Engineering student with a passion for designing the hardware and low-level software that power modern computing systems. Currently, I work as a Firmware Engineering Intern at Brady Corporation, where I develop embedded software and gain hands-on experience working close to the hardware.
+        <br /><br />
+        Outside of work and coursework, I enjoy building custom PCs, exploring computer architecture, working with FPGAs, and developing embedded systems. I am particularly interested in processor architecture, digital design, CPU/GPU design, and high-performance computing, and I enjoy tackling projects that bridge hardware and software.
+        <br /><br />
+        I am always looking for opportunities to expand my technical knowledge and apply it to meaningful engineering challenges. I am seeking internship and co-op opportunities where I can continue developing my skills in computer hardware, embedded systems, and computer architecture while contributing to innovative engineering teams.
       </>
     ),
   },
@@ -100,9 +102,23 @@ const about: About = {
     title: "Work Experience", 
     experiences: [
       {
-        company: "Engineering Projects & Research",
+        company: "Brady Corporation",
+        timeframe: "2025 - Present",
+        role: "Firmware Engineering Intern",
+        achievements: [
+          <>
+            Develop embedded systems software and firmware solutions working directly close to the hardware layer.
+          </>,
+          <>
+            Collaborate with innovative engineering teams to debug and implement microarchitectural controls.
+          </>
+        ],
+        images: [],
+      },
+      {
+        company: "Academic Engineering Projects & Research",
         timeframe: "2024 - Present",
-        role: "Computer Engineering Student / Developer",
+        role: "Computer Engineering Developer",
         achievements: [
           <>
             Designed, simulated, and verified custom processors and digital logic architectures 
@@ -169,7 +185,7 @@ const gallery: Gallery = {
   label: "Gallery",
   title: "Gallery",
   description: "Gallery showcase",
-  images: [], // FIX: Added the empty array TypeScript was looking for!
+  images: [], 
 };
 
 const work: Work = {
