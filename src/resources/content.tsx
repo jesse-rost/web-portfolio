@@ -8,7 +8,7 @@ const person: Person = {
   role: "Computer Engineer",
   avatar: "/images/avatar.jpg",
   email: "example@gmail.com", 
-  location: "America/Chicago", // Keeps the TypeScript compiler and world clock happy!
+  location: "America/Chicago", // Keeping the Wisconsin-time zone bouncer happy
   languages: ["English"], 
   locale: "en", 
 };
@@ -169,6 +169,7 @@ const gallery: Gallery = {
   label: "Gallery",
   title: "Gallery",
   description: "Gallery showcase",
+  images: [], // FIX: Added the empty array TypeScript was looking for!
 };
 
 const work: Work = {
