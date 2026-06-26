@@ -7,7 +7,7 @@ const person: Person = {
   name: `Jesse Rost`,
   role: "Computer Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com", 
+  email: "rostjesse@gmail.com", 
   location: "America/Chicago", // Keeping the Wisconsin-time zone bouncer happy
   languages: ["English"], 
   locale: "en", 
