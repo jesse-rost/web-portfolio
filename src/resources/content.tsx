@@ -153,23 +153,36 @@ const about: About = {
           <>Experienced in low-level programming close to the silicon, utilizing bare-metal code environments, target architectures, and system abstractions.</>
         ),
         tags: [
-          { name: "Embedded C", icon: "github" }, 
-          { name: "Bare-Metal Coding", icon: "terminal" },
-          { name: "ARMv7 Assembly", icon: "terminal" },
-          { name: "C", icon: "github" },
-          { name: "Linux Systems", icon: "terminal" }
+          { name: "Embedded C" }, 
+          { name: "Bare-Metal Coding" },
+          { name: "ARMv7 Assembly" },
+          { name: "C" },
+          { name: "Linux Systems" }
         ],
         images: [],
       },
       {
-        title: "Digital Design & Hardware Development",
+        title: "Digital Design & Circuit Architecture",
         description: (
-          <>Skilled in behavioral modeling, structural logic generation, circuit simulation, and FPGA implementation alongside fundamental electrical engineering concepts.</>
+          <>Skilled in behavioral modeling, structural logic generation, circuit simulation, and drawing schematics to map out hardware routing dependencies.</>
         ),
         tags: [
-          { name: "VHDL", icon: "github" }, 
-          { name: "Intel Quartus", icon: "linkedin" },
-          { name: "Electrical Engineering", icon: "linkedin" }
+          { name: "VHDL" }, 
+          { name: "Intel Quartus" },
+          { name: "Schematic Design" },
+          { name: "Schematic Creation" }
+        ],
+        images: [],
+      },
+      {
+        title: "Hardware Prototyping & CAD Layout",
+        description: (
+          <>Hands-on capabilities in full electromechanical integration, rapid physical design rendering, and custom mechanical assembly creation.</>
+        ),
+        tags: [
+          { name: "3D Modeling" }, 
+          { name: "3D Printing" },
+          { name: "CAD Prototyping" }
         ],
         images: [],
       },
@@ -179,9 +192,9 @@ const about: About = {
           <>Proficient in object-oriented programming designs, standalone tool build scripts, and structured environment configurations.</>
         ),
         tags: [
-          { name: "Java", icon: "github" }, 
-          { name: "Python", icon: "github" },
-          { name: "YAML Configuration", icon: "terminal" }
+          { name: "Java" }, 
+          { name: "Python" },
+          { name: "YAML Configuration" }
         ],
         images: [],
       },
