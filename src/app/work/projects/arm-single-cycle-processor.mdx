@@ -1,4 +1,11 @@
-# ARMv7 Single-Cycle Processor & System-on-Chip (SoC)
+````markdown
+---
+title: "ARMv7 Single-Cycle Processor & System-on-Chip (SoC)"
+publishedAt: "2024-12-15"
+summary: "A real-time embedded hardware-software system featuring a custom 32-bit single-cycle CPU core architecture synthesized on an Intel MAX 10 FPGA."
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+---
 
 A real-time embedded hardware-software system featuring a custom 32-bit single-cycle CPU core architecture synthesized on an Intel MAX 10 FPGA. The application executes a bare-metal autonomous navigation program that tracks spatial trajectory bounds and drives a physical Digibot robotic platform through real-time memory-mapped peripheral interaction.
 
@@ -52,19 +59,22 @@ Together these layers provide deterministic single-cycle execution while maintai
                                 ▼
 ┌──────────────────────────────────────────────────────────────┐
 │                 Central Processing Unit (CPU) Core           │
-│ Hardwired Control Unit │ CPSR Status Register                │
+│         Hardwired Control Unit │ CPSR Status Register        │
 └───────────────────────────────┬──────────────────────────────┘
                                 │
                                 ▼
 ┌──────────────────────────────────────────────────────────────┐
 │                  Datapath Lifecycle Stages                   │
 │                                                              │
-│  Instruction Fetch → Instruction Decode → Execute            │
+│    Instruction Fetch → Instruction Decode → Execute          │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-## Hardware Platform
+---
+
+# Hardware Platform
+
 | Component | Purpose |
 |------------|------------|
 | Intel MAX 10 FPGA (10M50DAF484C7G) | Target FPGA Platform |
@@ -80,26 +90,31 @@ Together these layers provide deterministic single-cycle execution while maintai
 
 A full hardware-software verification video showcasing the complete system implementation is available in the repository at:
 
-`docs/digibot_demo.mov`
+```text
+docs/digibot_demo.mov
+```
 
-> [!NOTE]
+> **Note on Drivetrain Tolerances**
+>
 > Minor deviations from a perfect square trajectory may be visible in the demonstration video. These deviations are due to physical Digibot alignment and drivetrain tolerances (wheel slip, motor imbalance, and chassis alignment), not errors in the CPU design, firmware, or FPGA synthesis. Functional validation confirms correct execution and timing behavior.
 
 The demonstration captures the synthesized CPU core running natively on the physical Intel MAX 10 FPGA board to drive the electro-mechanical Digibot rover.
 
-### Runtime Workflow
+---
 
-#### 1. Linear Velocity Profiling
+# Runtime Workflow
 
-The Digibot drives forward in a straight line while the CPU samples the infrared collision sensor. The single-cycle core accumulates clock cycles in internal register `R4` to index distance.
+## 1. Linear Velocity Profiling
 
-#### 2. Impact Detection & Calibration
+The Digibot drives forward in a straight line while the CPU samples the infrared collision sensor. The single-cycle core accumulates clock cycles in internal register **R4** to index distance.
+
+## 2. Impact Detection & Calibration
 
 Upon hitting a boundary, the processor halts the wheels, outputs the profiled travel time count directly to the 7-segment telemetry displays, and initiates a turn sequence.
 
-The CPU then profiles the clock cycles required in register `R7` to establish a precise 90-degree vector change.
+The CPU then profiles the clock cycles required in register **R7** to establish a precise 90-degree vector change.
 
-#### 3. Trajectory Replay Tracking
+## 3. Trajectory Replay Tracking
 
 After the initial sensor calibration sequence, the system waits for user confirmation via the slider switches.
 
@@ -130,6 +145,8 @@ ALUSEL <= CMD when OPCODE=B"00" else
           X"D";
 ```
 
+---
+
 ## Multi-Port Register File (`regfile.vhd`)
 
 Implements sixteen 32-bit registers with:
@@ -156,6 +173,8 @@ begin
 end process;
 ```
 
+---
+
 ## Autonomous Navigation Firmware (`digibot_square_navigation.s`)
 
 The firmware directly controls the Digibot using memory-mapped I/O without an operating system.
@@ -171,7 +190,7 @@ The firmware directly controls the Digibot using memory-mapped I/O without an op
 
 ### Sensor Polling Example
 
-```armasm
+```asm
 count:
     LDR     R2, [R5]
     AND     R2, R2, #0x04
@@ -180,6 +199,8 @@ count:
     BNE     measure_drive_time
     B       count
 ```
+
+---
 
 ## Memory-Mapped I/O Subsystem (`addressdecoder.vhd`)
 
@@ -203,12 +224,12 @@ LD2 <= '0' when ADDR = X"000000E8"
 
 | Address | Function |
 |----------|----------|
-| 0x00000000 - 0x0000001F | Data RAM |
-| 0x000000E0 | LED Array Output |
-| 0x000000E4 | Motor Controller Register |
-| 0x000000E8 | 7-Segment Display |
-| 0x000000EC | Proximity Sensor Input |
-| 0x000000F0 | Switch Inputs |
+| `0x00000000 - 0x0000001F` | Data RAM |
+| `0x000000E0` | LED Array Output |
+| `0x000000E4` | Motor Controller Register |
+| `0x000000E8` | 7-Segment Display |
+| `0x000000EC` | Proximity Sensor Input |
+| `0x000000F0` | Switch Inputs |
 
 ---
 
@@ -229,6 +250,8 @@ Supports:
 - Subtraction overflow detection
 - Single-cycle flag generation
 
+---
+
 ## Barrel Shifter & Rotator
 
 Supported operations:
@@ -248,6 +271,8 @@ B <= NUM(29 downto 0) & B"00" when B"1111",
      NUM(7 downto 6) when B"0011",
      NUM when others;
 ```
+
+---
 
 ## Seven-Segment Display Driver
 
@@ -375,6 +400,7 @@ This project provided experience with:
 
 # Author
 
-**Jesse Rost**  
+**Jesse Rost**
 
-**Course:** CPE 1510 – Single-Cycle Processor Design Lab  
+**Course:** CPE 1510 – Single-Cycle Processor Design Lab
+````
