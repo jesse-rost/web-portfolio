@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Jesse",
   lastName: "Rost",
   name: `Jesse Rost`,
-  role: "Computer Engineer",
+  role: "Firmware Engineering Intern",
   avatar: "", 
   email: "example@gmail.com", 
   location: "America/Chicago", 
@@ -62,7 +62,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm {person.firstName}, a Computer Engineering student at MSOE and Firmware Engineering Intern 
+      I'm {person.firstName}, a Computer Engineering student at MSOE and Firmware Engineering Intern
       focused on digital logic design, embedded systems, and computer architecture.
     </>
   ),
@@ -70,7 +70,7 @@ const home: Home = {
 
 const about: About = {
   path: "/about",
-  label: "Background", 
+  label: "About & Experience", 
   title: `Background – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from Menomonee Falls, WI`,
   tableOfContent: {
@@ -93,6 +93,8 @@ const about: About = {
         <br /><br />
         Outside of work and coursework, I enjoy building custom PCs, exploring computer architecture, working with FPGAs, and developing embedded systems. I am particularly interested in processor architecture, digital design, CPU/GPU design, and high-performance computing, and I enjoy tackling projects that bridge hardware and software.
         <br /><br />
+        Additionally, I completed an IT internship at Newline Technology, where I diagnosed and repaired Chromebooks, performed PCB soldering/desoldering, installed cameras, ran cabling and wire termination, and provisioned computers and technology for larger organizations.
+        <br /><br />
         I am always looking for opportunities to expand my technical knowledge and apply it to meaningful engineering challenges. I am seeking internship and co-op opportunities where I can continue developing my skills in computer hardware, embedded systems, and computer architecture while contributing to innovative engineering teams.
       </>
     ),
@@ -101,6 +103,26 @@ const about: About = {
     display: true, 
     title: "Work Experience", 
     experiences: [
+      {
+        company: "Newline Technology",
+        timeframe: "Jun 2025 - May 2026",
+        role: "IT Technician (Internship)",
+        achievements: [
+          <>
+            Diagnosed and repaired Chromebook hardware and software issues, improving device uptime for on-site deployments.
+          </>,
+          <>
+            Executed PCB soldering and desoldering tasks, ensuring high-quality repairs and efficient turnaround times.
+          </>,
+          <>
+            Performed camera installation projects, cable runs, and wire termination for surveillance and AV systems.
+          </>,
+          <>
+            Set up computers and technology systems for larger organizations and supported PDK/lock procedures.
+          </>,
+        ],
+        images: [],
+      },
       {
         company: "Brady Corporation",
         timeframe: "2025 - Present",
