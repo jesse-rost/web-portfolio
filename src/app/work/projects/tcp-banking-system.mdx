@@ -1,223 +1,36 @@
 ---
-title: "Producer-Consumer Banking Server"
+title: "Concurrent TCP Banking Server"
 publishedAt: "2026-06-28"
 summary: "A concurrent TCP banking system in C that uses threads, semaphores, mutexes, and epoll to process banking requests safely."
 images: []
 ---
 
-# Producer-Consumer Banking Server
+# Concurrent TCP Banking Server
 
-A concurrent TCP banking system implemented in C that enables multiple clients to safely access and modify shared bank accounts in real time. The project combines socket programming, POSIX threads, semaphores, mutexes, and Linux epoll to demonstrate scalable client-server communication and synchronized transaction processing.
+This project was a systems programming exercise in concurrent server design: I built a multithreaded TCP banking server in C that handled multiple clients at once while protecting shared account data with semaphores, mutexes, and a bounded producer-consumer queue.
 
-The system utilizes a producer-consumer architecture in which client requests are placed into a bounded transaction queue and processed by worker threads. This design ensures account consistency during concurrent access while maintaining efficient network responsiveness and persistent transaction storage.
+Repository: [View on GitHub](https://github.com/jesse-rost/my-portfolio/tree/main/tcp-banking-system)
 
----
+## What I built
 
-# Overview
+- A multiclient TCP server for deposits, withdrawals, and balance checks
+- A producer-consumer transaction pipeline to separate request handling from account updates
+- Thread-safe synchronization for shared queue and account data
+- Persistent balance and transaction logging for basic durability
 
-The application consists of a multithreaded TCP server and multiple client applications communicating over standard TCP sockets.
+## Why it mattered
 
-Each connected client submits banking operations such as deposits, withdrawals, and balance inquiries. Requests are placed into a shared transaction queue where worker threads safely process transactions and update account balances.
+The project was a strong introduction to real-world concurrency and systems design. It highlighted how careful synchronization and queue design are necessary when multiple clients interact with shared state at the same time.
 
-By separating network communication from transaction execution, the system achieves improved scalability, responsiveness, and thread-safe access to shared account data.
+## Skills highlighted
 
----
+- C
+- Systems programming
+- Multithreading
+- Synchronization
+- Socket programming
+- Linux/Unix systems
 
-# Key Features
-
-- Multi-client TCP server architecture
-- Producer-consumer transaction processing
-- POSIX thread-based concurrency
-- Bounded shared transaction queue
-- Semaphore-controlled queue management
-- Mutex-protected shared resources
-- Epoll-based connection handling
-- Persistent account storage
-- Transaction logging
-- Graceful server shutdown
-
----
-
-# System Architecture
-
-```text
-        Clients
-           │
-           ▼
-    Producer Threads
-           │
-           ▼
-┌──────────────────────┐
-│ Transaction Queue    │
-│ (Bounded Buffer)     │
-└──────────┬───────────┘
-           │
-           ▼
-    Consumer Threads
-           │
-           ▼
-    Account Database
-     (balance.csv)
-```
-
-Each connected client is serviced by a dedicated producer thread responsible for receiving and validating requests.
-
-Validated transactions are inserted into a shared bounded queue where consumer threads safely process banking operations and update account records.
-
----
-
-# Technical Highlights
-
-## Producer-Consumer Architecture
-
-The banking system follows a classic producer-consumer design pattern.
-
-### Producers
-
-Producer threads:
-
-- Receive client requests
-- Parse banking commands
-- Validate transaction parameters
-- Insert work into the shared queue
-
-### Consumers
-
-Consumer threads:
-
-- Remove transactions from the queue
-- Update account balances
-- Write transaction logs
-- Return results to the requesting client
-
-Separating network communication from transaction execution improves scalability while maintaining clear responsibility boundaries within the system.
-
----
-
-## Thread Synchronization
-
-Concurrent access to shared resources is protected through a combination of semaphores and mutexes.
-
-### Semaphores
-
-Semaphores are used to:
-
-- Track available queue capacity
-- Track pending transactions
-- Coordinate producer and consumer execution
-
-### Mutexes
-
-Mutexes protect:
-
-- Transaction queue operations
-- Account balance updates
-- Transaction log writes
-
-These synchronization mechanisms prevent race conditions when multiple clients access the same account simultaneously.
-
----
-
-## Epoll-Based Networking
-
-The server utilizes Linux's epoll API to efficiently monitor file descriptor activity.
-
-The event loop handles:
-
-- Incoming client connections
-- Ready socket events
-- Server console input for shutdown commands
-
-Using epoll allows the server to remain responsive without continuously polling sockets and scales more efficiently than traditional `select()` or `poll()` approaches.
-
----
-
-## Persistent Storage
-
-Account balances are maintained using:
-
-```text
-balance.csv
-```
-
-Transaction history is recorded in:
-
-```text
-server_log.txt
-```
-
-This provides persistence across server restarts while also creating an auditable transaction history for debugging and verification.
-
----
-
-# Verification & Testing
-
-System functionality was validated using multiple concurrent clients performing operations against shared accounts.
-
-## Functional Testing
-
-Verified support for:
-
-- Deposits
-- Withdrawals
-- Balance inquiries
-- Invalid command handling
-- Invalid decimal precision rejection
-- Negative transaction rejection
-
-### Example Client Session
-
-![Banking System Demo](docs/example_usage_run.png)
-
-*A sample client session demonstrating successful deposits, withdrawals, balance inquiries, and server-side validation of invalid transaction requests.*
-
----
-
-## Concurrency Validation
-
-Multiple clients simultaneously accessed identical account records while verifying:
-
-- Correct account balances
-- Proper transaction ordering
-- Absence of race conditions
-- Stable queue operation
-
-Consumer threads correctly serialized account updates while allowing multiple client connections to remain active concurrently.
-
----
-
-# Repository Structure
-
-```text
-producer-consumer-banking-server/
-├── Client.c
-├── Server.c
-├── Makefile
-├── balance.csv
-├── server_log.txt
-├── example_usage_run.png
-└── README.md
-```
-
----
-
-# Build & Run
-
-## Build
-
-```bash
-make
-```
-
-## Start Server
-
-```bash
-./Server
-```
-
-## Start Client
-
-```bash
 ./Client
 ```
 

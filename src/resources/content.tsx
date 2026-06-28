@@ -46,7 +46,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building the intersection of hardware and software</>,
+  headline: <>Designing hardware and systems for next-generation computing</>,
   featured: {
     display: false, 
     title: (
@@ -62,8 +62,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm {person.firstName}, a Computer Engineering student at MSOE and Firmware Engineering Intern
-      focused on digital logic design, embedded systems, and computer architecture.
+      I'm {person.firstName}, a Computer Engineering student at MSOE focused on digital logic design,
+      processor architecture, FPGA development, and hardware-software systems.
     </>
   ),
 };
@@ -89,13 +89,13 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I am a Computer Engineering student at the Milwaukee School of Engineering with a passion for designing the hardware and low-level software that power modern computing systems. Currently, I work as a Firmware Engineering Intern at Brady Corporation, where I develop embedded software and gain hands-on experience working close to the hardware.
+        I am a Computer Engineering student at the Milwaukee School of Engineering with professional experience in embedded systems and a strong interest in digital hardware design, processor architecture, FPGA development, and computer architecture. As a Firmware Engineering Intern at Brady Corporation, I work at the hardware/software interface while developing the low-level systems that enable embedded devices. My long-term goal is to design the hardware that powers modern computing systems.
         <br /><br />
-        Outside of work and coursework, I enjoy building custom PCs, exploring computer architecture, working with FPGAs, and developing embedded systems. I am particularly interested in processor architecture, digital design, CPU/GPU design, and high-performance computing, and I enjoy tackling projects that bridge hardware and software.
+        My primary interests include processor architecture, digital logic design, FPGA development, ASIC design, computer architecture, and high-performance computing. I enjoy designing systems where hardware and software interact closely, from RTL implementation through low-level software.
         <br /><br />
         Additionally, I completed an IT internship at Newline Technology, where I diagnosed and repaired Chromebooks, performed PCB soldering/desoldering, installed cameras, ran cabling and wire termination, and provisioned computers and technology for larger organizations.
         <br /><br />
-        I am always looking for opportunities to expand my technical knowledge and apply it to meaningful engineering challenges. I am seeking internship and co-op opportunities where I can continue developing my skills in computer hardware, embedded systems, and computer architecture while contributing to innovative engineering teams.
+        I aspire to work as a hardware design engineer developing next-generation processors, accelerators, and digital systems that push the boundaries of computing performance. I am always looking for opportunities to expand my technical knowledge and apply it to meaningful engineering challenges.
       </>
     ),
   },
@@ -104,21 +104,17 @@ const about: About = {
     title: "Work Experience", 
     experiences: [
       {
-        company: "Newline Technology",
-        timeframe: "Jun 2025 - May 2026",
-        role: "IT Technician (Internship)",
+        company: "Academic Engineering Projects & Research",
+        timeframe: "2024 - Present",
+        role: "Computer Engineering Developer",
         achievements: [
           <>
-            Diagnosed and repaired Chromebook hardware and software issues, improving device uptime for on-site deployments.
+            Designed, simulated, and verified custom processors and digital logic architectures 
+            using design suites like Intel Quartus.
           </>,
           <>
-            Executed PCB soldering and desoldering tasks, ensuring high-quality repairs and efficient turnaround times.
-          </>,
-          <>
-            Performed camera installation projects, cable runs, and wire termination for surveillance and AV systems.
-          </>,
-          <>
-            Set up computers and technology systems for larger organizations and supported PDK/lock procedures.
+            Programmed and debugged low-level microprocessor instructions and machine code using 
+            assembly environments.
           </>,
         ],
         images: [],
@@ -138,17 +134,21 @@ const about: About = {
         images: [],
       },
       {
-        company: "Academic Engineering Projects & Research",
-        timeframe: "2024 - Present",
-        role: "Computer Engineering Developer",
+        company: "Newline Technology",
+        timeframe: "Jun 2025 - May 2026",
+        role: "IT Technician (Internship)",
         achievements: [
           <>
-            Designed, simulated, and verified custom processors and digital logic architectures 
-            using design suites like Intel Quartus.
+            Diagnosed and repaired Chromebook hardware and software issues, improving device uptime for on-site deployments.
           </>,
           <>
-            Programmed and debugged low-level microprocessor instructions and machine code using 
-            assembly environments.
+            Executed PCB soldering and desoldering tasks, ensuring high-quality repairs and efficient turnaround times.
+          </>,
+          <>
+            Performed camera installation projects, cable runs, and wire termination for surveillance and AV systems.
+          </>,
+          <>
+            Set up computers and technology systems for larger organizations and supported PDK/lock procedures.
           </>,
         ],
         images: [],
@@ -170,53 +170,47 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Embedded Systems & Systems Programming",
+        title: "Hardware Design",
         description: (
-          <>Experienced in low-level programming close to the silicon, utilizing bare-metal code environments, target architectures, and system abstractions.</>
+          <>Experienced in digital logic implementation, RTL-oriented design work, and processor architecture concepts using HDL-based workflows and hardware simulation tools.</>
         ),
         tags: [
-          { name: "Embedded C" }, 
-          { name: "Bare-Metal Coding" },
-          { name: "ARMv7 Assembly" },
-          { name: "C" },
-          { name: "Linux Systems" }
-        ],
-        images: [],
-      },
-      {
-        title: "Digital Design & Circuit Architecture",
-        description: (
-          <>Skilled in behavioral modeling, structural logic generation, circuit simulation, and drawing schematics to map out hardware routing dependencies.</>
-        ),
-        tags: [
-          { name: "VHDL" }, 
+          { name: "VHDL" },
           { name: "Intel Quartus" },
-          { name: "Schematic Design" },
-          { name: "Schematic Creation" }
+          { name: "FPGA Development" },
+          { name: "Digital Logic Design" },
+          { name: "Processor Architecture" },
+          { name: "Computer Architecture" },
+          { name: "Finite State Machines" },
+          { name: "RTL Design" }
         ],
         images: [],
       },
       {
-        title: "Hardware Prototyping & CAD Layout",
+        title: "Programming & Low-Level Systems",
         description: (
-          <>Hands-on capabilities in full electromechanical integration, rapid physical design rendering, and custom mechanical assembly creation.</>
+          <>Comfortable working across low-level software and hardware-adjacent development, from embedded firmware to assembly and system-level code.</>
         ),
         tags: [
-          { name: "3D Modeling" }, 
-          { name: "3D Printing" },
-          { name: "CAD Prototyping" }
-        ],
-        images: [],
-      },
-      {
-        title: "Software Engineering & Automation",
-        description: (
-          <>Proficient in object-oriented programming designs, standalone tool build scripts, and structured environment configurations.</>
-        ),
-        tags: [
-          { name: "Java" }, 
+          { name: "C" },
+          { name: "ARMv7" },
+          { name: "Embedded C" },
           { name: "Python" },
-          { name: "YAML Configuration" }
+          { name: "Java" }
+        ],
+        images: [],
+      },
+      {
+        title: "Embedded Systems & Hardware Debugging",
+        description: (
+          <>Hands-on experience working close to the hardware through embedded software development, firmware debugging, and hardware bring-up support.</>
+        ),
+        tags: [
+          { name: "Firmware Development" },
+          { name: "Hardware Debugging" },
+          { name: "PCB Soldering" },
+          { name: "Oscilloscopes" },
+          { name: "Logic Analyzers" }
         ],
         images: [],
       },
