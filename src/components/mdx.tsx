@@ -77,12 +77,31 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
   );
 }
 
+function getText(node: React.ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") {
+    return String(node);
+  }
+
+  if (Array.isArray(node)) {
+    return node.map(getText).join("");
+  }
+
+  if (React.isValidElement(node)) {
+    return getText((node.props as { children?: React.ReactNode }).children);
+  }
+
+  return "";
+}
+
 function slugify(str: string): string {
-  const strWithAnd = str.replace(/&/g, " and "); // Replace & with 'and'
+  if (!str) return "";
+
+  const strWithAnd = str.replace(/&/g, " and ");
+
   return transliterate(strWithAnd, {
     lowercase: true,
-    separator: "-", // Replace spaces with -
-  }).replace(/\-\-+/g, "-"); // Replace multiple - with single -
+    separator: "-",
+  }).replace(/-+/g, "-");
 }
 
 function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
@@ -90,15 +109,22 @@ function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
     children,
     ...props
   }: Omit<React.ComponentProps<typeof HeadingLink>, "as" | "id">) => {
-    const slug = slugify(children as string);
+    const slug = slugify(getText(children));
+
     return (
-      <HeadingLink marginTop="24" marginBottom="12" as={as} id={slug} {...props}>
+      <HeadingLink
+        marginTop="24"
+        marginBottom="12"
+        as={as}
+        id={slug}
+        {...props}
+      >
         {children}
       </HeadingLink>
     );
   };
 
-  CustomHeading.displayName = `${as}`;
+  CustomHeading.displayName = as;
 
   return CustomHeading;
 }
