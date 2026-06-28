@@ -102,6 +102,10 @@ export default async function RootLayout({
             `,
           }}
         />
+        <link
+          rel="icon"
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAn8B9p6b0QAAAABJRU5ErkJggg=="
+        />
       </head>
       <Providers>
         <Column

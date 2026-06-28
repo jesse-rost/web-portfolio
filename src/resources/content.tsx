@@ -104,24 +104,8 @@ const about: About = {
     title: "Work Experience", 
     experiences: [
       {
-        company: "Academic Engineering Projects & Research",
-        timeframe: "2024 - Present",
-        role: "Computer Engineering Developer",
-        achievements: [
-          <>
-            Designed, simulated, and verified custom processors and digital logic architectures 
-            using design suites like Intel Quartus.
-          </>,
-          <>
-            Programmed and debugged low-level microprocessor instructions and machine code using 
-            assembly environments.
-          </>,
-        ],
-        images: [],
-      },
-      {
         company: "Brady Corporation",
-        timeframe: "2025 - Present",
+        timeframe: "May 2026 - Present",
         role: "Firmware Engineering Intern",
         achievements: [
           <>
