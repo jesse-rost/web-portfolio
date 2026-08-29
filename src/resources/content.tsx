@@ -96,7 +96,10 @@ const about: About = {
             Designed the triage pipeline to flag unverifiable patches, such as missing test harnesses or hardware-dependent behavior, rather than report false coverage; validated end to end on real production tickets.
           </>,
           <>
-            Worked across Azure DevOps (sprints, work items, YAML pipelines) and Pluma, a Lua-based test framework, contributing to test tooling for a large embedded C codebase.
+            Gained hands-on experience with Agile/Scrum workflows, using Azure DevOps and Git for sprint planning, work item tracking, and version control.
+          </>,
+          <>
+            Automated both tools through Azure DevOps pipelines, using Python, YAML, and Pluma, our Lua-based test automation framework.
           </>,
         ],
         images: [],
