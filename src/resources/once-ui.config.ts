@@ -11,14 +11,13 @@ import {
   SocialSharingConfig,
   StyleConfig,
 } from "@/types";
-import { home, person, social } from "./content";
+import { about, person, social } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
 
 const routes: RoutesConfig = {
   "/": true,
-  "/about": true,
   "/work": true,
   "/blog": false,
   "/gallery": false,
@@ -189,7 +188,7 @@ const schema: SchemaConfig = {
   logo: "",
   type: "Person",
   name: person.name,
-  description: home.description,
+  description: about.description,
   email: person.email,
 };
 

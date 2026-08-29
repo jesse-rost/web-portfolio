@@ -1,6 +1,5 @@
 import React from "react";
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { About, Blog, Gallery, Newsletter, Person, Social, Work } from "@/types";
 
 const person: Person = {
   firstName: "Jesse",
@@ -41,37 +40,9 @@ const social: Social = [
   },
 ];
 
-const home: Home = {
-  path: "/",
-  image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Designing hardware and systems for next-generation computing</>,
-  featured: {
-    display: false, 
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Featured</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Latest Project
-        </Text>
-      </Row>
-    ),
-    href: "/work",
-  },
-  subline: (
-    <>
-      I'm {person.firstName}, a Computer Engineering student at MSOE focused on digital logic design,
-      processor architecture, FPGA development, and hardware-software systems.
-    </>
-  ),
-};
-
 const about: About = {
-  path: "/about",
-  label: "About & Experience", 
+  path: "/",
+  label: "About & Experience",
   title: `Background – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from Menomonee Falls, WI`,
   tableOfContent: {
@@ -243,4 +214,4 @@ const work: Work = {
   description: `Engineering and development projects by ${person.name}`,
 };
 
-export { person, social, newsletter, home, about, blog, gallery, work };
+export { person, social, newsletter, about, blog, gallery, work };
