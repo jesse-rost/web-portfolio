@@ -81,25 +81,25 @@ const about: About = {
         role: "Firmware Engineering Intern",
         achievements: [
           <>
-            Built an automated print-timing validation system that captures printhead control signals and checks the timing of every printed line, replacing manual visual review that missed sub-visual defects entirely.
+            Built the Raster Analysis tool, automating print-timing validation that previously relied on manual visual review and scanned-sample audits run only 2-3 times a year, catching timing defects invisible to visual inspection.
           </>,
           <>
-            Cut analyzer hardware cost over 100x by replacing a $500+ commercial logic analyzer with a $4 Raspberry Pi Pico, and re-architected capture around offline post-processing to reliably sample sub-microsecond pulses.
+            Selected a $4 Raspberry Pi Pico over $500+ commercial logic analyzers, and re-architected capture around offline post-processing to hit 15 MHz sampling, about 7x finer resolution than the shortest signal pulses, without USB bandwidth limits.
           </>,
           <>
-            Integrated the timing analyzer into the nightly test pipeline, surfacing timing regressions to developers same-day instead of months later.
+            Deployed the tool into a nightly Azure DevOps pipeline built on Python and Pluma, rolling it out across the Sparta and Eleven printer lines and cutting defect discovery time from months to overnight.
           </>,
           <>
-            Built a multi-agent Python pipeline for automated bug triage that routes tickets, drafts candidate patches, and validates each against the test suite before opening a pull request.
+            Built a multi-agent AI pipeline (Gemini 3.1 Pro and 3.5 Flash) using the Azure DevOps REST API to route incoming bug tickets, draft candidate patches, and empirically test each against pre- and post-patch code.
           </>,
           <>
-            Designed the triage pipeline to flag unverifiable patches, such as missing test harnesses or hardware-dependent behavior, rather than report false coverage; validated end to end on real production tickets.
+            Enforced a 90% confidence threshold gating pull request creation, and designed the pipeline to flag unverifiable patches, such as missing test harnesses or hardware-dependent behavior, rather than fabricate coverage.
+          </>,
+          <>
+            Built a Streamlit dashboard tracking patch confidence scores, pass rates, and API spend across pipeline runs.
           </>,
           <>
             Gained hands-on experience with Agile/Scrum workflows, using Azure DevOps and Git for sprint planning, work item tracking, and version control.
-          </>,
-          <>
-            Automated both tools through Azure DevOps pipelines, using Python, YAML, and Pluma, our Lua-based test automation framework.
           </>,
         ],
         images: [],
