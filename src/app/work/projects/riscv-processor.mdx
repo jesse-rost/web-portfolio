@@ -1,0 +1,38 @@
+---
+title: "RISC-V Single-Cycle & 5-Stage Pipelined Processor"
+publishedAt: "2026-08-29"
+summary: "Two complete 32-bit RISC-V (RV32I) processor cores written from scratch in VHDL, verified with self-checking testbenches and synthesized on an Intel MAX 10 FPGA, with a measured performance comparison between them."
+images: []
+---
+
+# RISC-V Single-Cycle & 5-Stage Pipelined Processor
+
+This project is a ground-up redesign of an earlier ARMv4 single-cycle processor into the RISC-V RV32I instruction set, followed by a five-stage pipelined implementation with full hazard resolution. Both cores were built entirely in structural and dataflow VHDL, verified through self-checking simulation in GHDL, and synthesized on an Intel MAX 10 FPGA, then benchmarked against each other using a hand-written assembly sorting program.
+
+Repository: [View on GitHub](https://github.com/jesse-rost/my-portfolio/tree/main/riscv-processor)
+
+## What I built
+
+- A twelve-instruction RV32I single-cycle datapath: fetch, register file, ALU, and branch/jump target logic
+- A five-stage pipelined core (IF/ID/EX/MEM/WB) with four isolating pipeline registers
+- A forwarding unit resolving data hazards across EX/MEM and MEM/WB
+- A hazard detection unit that stalls on load-use dependencies and injects pipeline bubbles
+- Branch flush logic that discards wrong-path instructions on taken branches
+- A register file with a write-first read-during-write bypass
+- Self-checking testbenches for every component (ALU, register file, immediate generator, control unit, and full processor cycle-level traces)
+- A hand-written RV32I assembly bubble sort used as the benchmark workload for both cores
+
+## Why it mattered
+
+This was my first real exercise in pipelined processor design, and it pushed past just making a pipeline function correctly into understanding what it actually buys you. After synthesizing both cores, the pipelined design ran at 78.96 MHz versus 46.15 MHz for the single-cycle version, a 1.71x clock frequency improvement, but the branch-heavy sorting benchmark ate most of that gain through pipeline flushes, leaving a net 1.17x speedup. Digging into post-synthesis timing analysis to find that the critical path ran through the MEM/WB forwarding network, and reasoning about why the real-world speedup fell so far short of the textbook 5x figure, taught me more about architectural tradeoffs than getting the pipeline to pass verification did.
+
+## Skills highlighted
+
+- VHDL (structural and dataflow, VHDL-2008)
+- RISC-V RV32I instruction set architecture
+- Pipelined processor design and hazard resolution
+- Data forwarding and hazard detection
+- FPGA synthesis and static timing analysis
+- Self-checking testbench design
+- GHDL simulation and Intel Quartus workflows
+- RISC-V assembly programming
