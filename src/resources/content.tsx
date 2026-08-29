@@ -81,25 +81,22 @@ const about: About = {
         role: "Firmware Engineering Intern",
         achievements: [
           <>
-            Designed and built an automated print-timing validation system that captures printhead control signals during live print jobs and checks the timing of every printed line, replacing manual visual review that missed sub-visual timing defects entirely.
+            Built an automated print-timing validation system that captures printhead control signals and checks the timing of every printed line, replacing manual visual review that missed sub-visual defects entirely.
           </>,
           <>
-            Replaced a $500+ commercial logic analyzer with a $4 Raspberry Pi Pico running open-source logic analyzer firmware, and re-architected the capture pipeline around offline post-processing to remove USB throughput from the critical path and reliably sample sub-microsecond pulses.
+            Cut analyzer hardware cost over 100x by replacing a $500+ commercial logic analyzer with a $4 Raspberry Pi Pico, and re-architected capture around offline post-processing to reliably sample sub-microsecond pulses.
           </>,
           <>
-            Integrated the timing analyzer into the nightly test pipeline, giving developers same-day feedback on timing regressions instead of discovering them months later.
+            Integrated the timing analyzer into the nightly test pipeline, surfacing timing regressions to developers same-day instead of months later.
           </>,
           <>
-            Built a multi-agent Python pipeline for automated bug triage that routes incoming tickets to the correct repository, drafts candidate patches, and validates each one by running the existing test suite against pre- and post-patch code before opening a pull request.
+            Built a multi-agent Python pipeline for automated bug triage that routes tickets, drafts candidate patches, and validates each against the test suite before opening a pull request.
           </>,
           <>
-            Designed the triage pipeline to explicitly flag when a patch can't be verified, such as a missing test harness or hardware-dependent behavior, rather than report false coverage, and validated it end to end against real production tickets.
+            Designed the triage pipeline to flag unverifiable patches, such as missing test harnesses or hardware-dependent behavior, rather than report false coverage; validated end to end on real production tickets.
           </>,
           <>
-            Worked across Azure DevOps (sprint planning, work items, YAML build pipelines) and a custom Lua-based test framework (Plua) while contributing to test tooling for a large embedded C codebase; picking up Python and now C++ along the way.
-          </>,
-          <>
-            Continuing on as a co-op through the school year to extend both tools: broader coverage for the timing analyzer, and more repositories and smarter test discovery for the triage pipeline.
+            Worked across Azure DevOps (sprints, work items, YAML pipelines) and Pluma, a Lua-based test framework, contributing to test tooling for a large embedded C codebase.
           </>,
         ],
         images: [],
