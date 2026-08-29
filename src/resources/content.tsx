@@ -67,9 +67,6 @@ const about: About = {
         My primary interests include processor architecture, digital logic design, FPGA development, ASIC design, computer architecture, and high-performance computing. I enjoy designing systems where hardware and software interact closely, from RTL implementation through low-level software.
       </Text>,
       <Text key="p3" as="p" variant="body-default-l">
-        Additionally, I completed an IT internship at Newline Technology, where I diagnosed and repaired Chromebooks, performed PCB soldering/desoldering, installed cameras, ran cabling and wire termination, and provisioned computers and technology for larger organizations.
-      </Text>,
-      <Text key="p4" as="p" variant="body-default-l">
         I aspire to work as a hardware design engineer developing next-generation processors, accelerators, and digital systems that push the boundaries of computing performance. I am always looking for opportunities to expand my technical knowledge and apply it to meaningful engineering challenges.
       </Text>,
     ],
@@ -167,10 +164,13 @@ const about: About = {
         ),
         tags: [
           { name: "C" },
+          { name: "C++" },
           { name: "ARMv7" },
+          { name: "RISC-V Assembly" },
           { name: "Embedded C" },
           { name: "Python" },
-          { name: "Java" }
+          { name: "Java" },
+          { name: "YAML" }
         ],
         images: [],
       },
