@@ -1,5 +1,5 @@
-import React from "react";
 import { About, Blog, Gallery, Newsletter, Person, Social, Work } from "@/types";
+import { Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Jesse",
@@ -60,18 +60,18 @@ const about: About = {
     display: true,
     title: "Introduction",
     description: [
-      <React.Fragment key="p1">
+      <Text key="p1" as="p" variant="body-default-l">
         I am a Computer Engineering student at the Milwaukee School of Engineering with professional experience in embedded systems and a strong interest in digital hardware design, processor architecture, FPGA development, and computer architecture. As a Firmware Engineering Intern at Brady Corporation, I work at the hardware/software interface while developing the low-level systems that enable embedded devices. My long-term goal is to design the hardware that powers modern computing systems.
-      </React.Fragment>,
-      <React.Fragment key="p2">
+      </Text>,
+      <Text key="p2" as="p" variant="body-default-l">
         My primary interests include processor architecture, digital logic design, FPGA development, ASIC design, computer architecture, and high-performance computing. I enjoy designing systems where hardware and software interact closely, from RTL implementation through low-level software.
-      </React.Fragment>,
-      <React.Fragment key="p3">
+      </Text>,
+      <Text key="p3" as="p" variant="body-default-l">
         Additionally, I completed an IT internship at Newline Technology, where I diagnosed and repaired Chromebooks, performed PCB soldering/desoldering, installed cameras, ran cabling and wire termination, and provisioned computers and technology for larger organizations.
-      </React.Fragment>,
-      <React.Fragment key="p4">
+      </Text>,
+      <Text key="p4" as="p" variant="body-default-l">
         I aspire to work as a hardware design engineer developing next-generation processors, accelerators, and digital systems that push the boundaries of computing performance. I am always looking for opportunities to expand my technical knowledge and apply it to meaningful engineering challenges.
-      </React.Fragment>,
+      </Text>,
     ],
   },
   work: {
