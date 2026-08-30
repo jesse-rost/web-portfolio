@@ -11,7 +11,6 @@ import {
   Meta,
   Schema,
   Row,
-  ShineFx,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
@@ -143,9 +142,9 @@ export default function Home() {
                 />
               </Row>
             )}
-            <ShineFx as="h1" speed={4} className={styles.textAlign} variant="display-strong-xl">
+            <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
-            </ShineFx>
+            </Heading>
             <Text
               className={styles.textAlign}
               variant="display-default-xs"

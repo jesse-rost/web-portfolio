@@ -61,7 +61,7 @@ const about: About = {
     title: "Introduction",
     description: [
       <Text key="p1" as="p" variant="body-default-l">
-        I am a Computer Engineering student at the Milwaukee School of Engineering with professional experience in embedded systems and a strong interest in digital hardware design, processor architecture, FPGA development, and computer architecture. As a Firmware Engineering Intern at Brady Corporation, I work at the hardware/software interface while developing the low-level systems that enable embedded devices. My long-term goal is to design the hardware that powers modern computing systems.
+        I am a Computer Engineering student at the Milwaukee School of Engineering with professional experience in embedded systems and a strong interest in digital hardware design, processor architecture, FPGA development, and computer architecture. As a Firmware Engineering Intern at Brady Corporation, I build automated testing and diagnostic tools that work at the hardware/software interface, from signal-timing validation to AI-assisted bug triage. My long-term goal is to design the hardware that powers modern computing systems.
       </Text>,
       <Text key="p2" as="p" variant="body-default-l">
         My primary interests include processor architecture, digital logic design, FPGA development, ASIC design, computer architecture, and high-performance computing. I enjoy designing systems where hardware and software interact closely, from RTL implementation through low-level software.
@@ -107,7 +107,7 @@ const about: About = {
       {
         company: "Newline Technology",
         timeframe: "Jun 2025 - May 2026",
-        role: "IT Technician (Internship)",
+        role: "IT Technician Intern",
         achievements: [
           <>
             Diagnosed and repaired Chromebook hardware and software issues, improving device uptime for on-site deployments.
